@@ -10,8 +10,8 @@ package:
 source:
   fn: pROC_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/pROC_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/pROC/pROC_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/pROC_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/pROC/pROC_{{ version }}.tar.gz
   sha256: 4039fb71e531b1fcff319fc656657813465bf818476535d02a16f7271c44a066
 
 
