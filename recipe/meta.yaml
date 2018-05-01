@@ -1,4 +1,4 @@
-{% set version = '1.10.0' %}
+{% set version = '1.11.0' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,25 +12,19 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/pROC_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/pROC/pROC_{{ version }}.tar.gz
-  sha256: 4039fb71e531b1fcff319fc656657813465bf818476535d02a16f7271c44a066
-
-
-  # patches:
-   # List any patch files here
-   # - fix.patch
+  sha256: 5f7e6a23a327a7c0d3effb07acc08649d1af25e8d03fc5f8b92b489f44f9c1ec
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
 
-
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
     - lib/
 
-# Suggests: microbenchmark, tcltk, MASS, logcondens, doParallel, testthat
+# Suggests: microbenchmark, tcltk, MASS, logcondens, doParallel, testthat, vdiffr
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
@@ -84,24 +78,24 @@ extra:
 # Package: pROC
 # Type: Package
 # Title: Display and Analyze ROC Curves
-# Version: 1.10.0
-# Date: 2017-06-10
+# Version: 1.11.0
+# Date: 2018-03-24
 # Encoding: UTF-8
 # Depends: R (>= 2.14)
 # Imports: plyr, utils, methods, Rcpp (>= 0.11.1), ggplot2,
-# Suggests: microbenchmark, tcltk, MASS, logcondens, doParallel, testthat
+# Suggests: microbenchmark, tcltk, MASS, logcondens, doParallel, testthat, vdiffr
 # LinkingTo: Rcpp
-# Authors@R: c(person("Xavier", "Robin", role = c("cre", "aut"),  email = "robin@lindinglab.org"), person("Natacha", "Turck", role = "aut"), person("Alexandre", "Hainard", role = "aut"), person("Natalia", "Tiberti", role = "aut"), person("Frederique", "Lisacek", role = "aut"), person("Jean-Charles", "Sanchez", role = "aut"), person("Markus", "Muller", role = "aut"), person("Stefan", "Siegert", role = "ctb",  comment = "Fast DeLong code",  email = "stefan_siegert@gmx.de"))
+# Authors@R: c(person("Xavier", "Robin", role = c("cre", "aut"),  email = "pROC-cran@xavier.robin.name"), person("Natacha", "Turck", role = "aut"), person("Alexandre", "Hainard", role = "aut"), person("Natalia", "Tiberti", role = "aut"), person("Frederique", "Lisacek", role = "aut"), person("Jean-Charles", "Sanchez", role = "aut"), person("Markus", "Muller", role = "aut"), person("Stefan", "Siegert", role = "ctb",  comment = "Fast DeLong code",  email = "stefan_siegert@gmx.de"))
 # Description: Tools for visualizing, smoothing and comparing receiver operating characteristic (ROC curves). (Partial) area under the curve (AUC) can be compared with statistical tests based on U-statistics or bootstrap. Confidence intervals can be computed for (p)AUC or ROC curves.
 # License: GPL (>= 3)
 # URL: http://expasy.org/tools/pROC/
 # LazyLoad: yes
 # NeedsCompilation: yes
-# Packaged: 2017-06-10 14:21:52 UTC; xavier
+# Packaged: 2018-03-24 17:49:48 UTC; xavier
 # Author: Xavier Robin [cre, aut], Natacha Turck [aut], Alexandre Hainard [aut], Natalia Tiberti [aut], Frederique Lisacek [aut], Jean-Charles Sanchez [aut], Markus Muller [aut], Stefan Siegert [ctb] (Fast DeLong code)
-# Maintainer: Xavier Robin <robin@lindinglab.org>
+# Maintainer: Xavier Robin <pROC-cran@xavier.robin.name>
 # Repository: CRAN
-# Date/Publication: 2017-06-10 21:17:21 UTC
+# Date/Publication: 2018-03-25 14:53:33 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
